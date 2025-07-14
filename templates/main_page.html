@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Главная</title>
+
+    <!-- 1. Подключение CSS Bootstrap: основной файл стилей фреймворка -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 2. (Опционально) Подключение иконок Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+<div class="container-fluid"><!-- Контейнер, который занимает 100% ширины экрана.-->
+
+  <div class="row"> <!-- row: Создает горизонтальную группу колонок. -->
+
+    <!-- ======================= ЛЕВАЯ КОЛОНКА (САЙДБАР) ====================== -->
+
+    <div class="col-md-2 vh-100 bg-black p-2 position-sticky top-0">
+
+        <div class="card h-100 border-0 d-flex flex-column">  <!-- Делаем всё в "карточке" -->
+
+            <div class="card-header bg-black border-0 d-flex align-items-center ps-2"> <!--Шапка карточки-->
+                <i class="bi bi-bootstrap me-3 fs-4 text-light"></i> <!-- логотип -->
+                <span class="fs-4 fw-bold text-light">Меню</span>
+            </div>
+
+                <div class="py-3 bg-black">
+                    <hr class="p-1 my-0 bg-light rounded-3">  <!-- Горизонтальный разделитель -->
+                </div>
+
+            <!-- Основная секция для контента карточки. -->
+            <div class="card-body p-2 bg-black">
+                <!--
+                  .nav, .nav-pills: Компонент "Навигация". Создает список ссылок.
+                    - .nav-pills: Стиль навигации в виде "таблеток" (прямоугольники с закругленными углами).
+                  .flex-column: Располагает элементы навигации вертикально.
+                -->
+                <ul class="nav nav-pills flex-column">
+                    <!-- .nav-item: Элемент списка навигации. .mb-2 - отступ снизу. -->
+                    <li class="nav-item mb-2">
+                        <!--
+                          .nav-link: Сама ссылка.
+                          .active: Класс для обозначения текущей, активной ссылки (она будет выделена основным цветом).
+                        -->
+                        <a href="main_page.html" class="nav-link active" aria-current="page">
+                            <!-- i.bi.bi-house-door: Тег для иконки из Bootstrap Icons. .me-2 - отступ справа (margin-end). -->
+                            <i class="bi bi-house-door me-2"></i>
+                            Главная
+                        </a>
+                    </li>
+
+                    <li class="nav-item mb-2">
+                        <a href="orders.html" class="nav-link text-white">
+                            <i class="bi bi-grid me-2"></i>
+                            Категории
+                        </a>
+                    </li>
+
+                    <li class="nav-item mb-2">
+                        <a href="catalog.html" class="nav-link text-white">
+                            <i class="bi bi-arrow-clockwise me-2"></i>
+                            Заказы
+                        </a>
+                    </li>
+
+                    <li class="nav-item mb-2">
+                        <a href="contacts.html" class="nav-link text-white">
+                            <i class="bi bi-person-lines-fill me-2"></i>
+                            Контакты
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <!-- hr: Горизонтальный разделитель -->
+                <div class="py-3 bg-black">
+                    <hr class="p-1 my-0 bg-light rounded-3">
+                </div>
+
+            <!-- .card-footer: "подвал" карточки. -->
+            <div class="card-footer bg-black border-0 p-2">
+                <hr class="mt-0 mb-2">
+
+                <!-- .dropdown: Компонент "Выпадающее меню".  Кнопка-триггер и сам список меню. -->
+                <div class="dropdown">
+                    <!--  Элемент, при клике на который будет появляться меню.
+                      .dropdown-toggle: Добавляет стрелочку-индикатор.
+                      data-bs-toggle="dropdown": JavaScript-атрибут, который "включает" механику выпадающего меню.
+                      .rounded-circle: Делает аватарку круглой.  -->
+                    <a href="#" class="d-flex align-items-center text-light text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" >
+                        <i class="bi bi-person-badge me-2 text-light"></i>
+                        <strong>Пользователь</strong>
+                    </a>
+                    <!-- .dropdown-menu: Сам выпадающий список. По умолчанию скрыт. -->
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <!-- .dropdown-item: Пункт выпадающего списка. -->
+                        <li><a class="dropdown-item" href="#">Профиль</a></li>
+                        <!-- .dropdown-divider: Горизонтальный разделитель внутри списка. -->
+                        <li><hr class="dropdown-divider bg-secondary"></li>
+                        <li><a class="dropdown-item" href="#">Выйти</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div> <!-- Конец .card -->
+    </div> <!-- Конец левой колонки -->
+
+    <!-- ======================= ПРАВАЯ КОЛОНКА (КОНТЕНТ) ===================== -->
+
+    <main class="col-md-10 p-5">
+
+      <h1 class="mb-2 text-center">Главная</h1>
+
+      <h3 class="text-muted mb-5 text-center">Продажа товаров</h3>
+
+      <div class="row justify-content-evenly">
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card text-center h-100">   <!-- .h-100: Делает все карточки в одном .row одинаковой высоты. -->
+
+            <div class="card-header bg-grey text-white">
+              <h5 class="card-title mb-0 text-black">Товар №1</h5>
+            </div>
+
+            <!-- Тело карточки -->
+            <div class="card-body d-flex flex-column">
+              <h2 class="card-text fw-bold">$ 100</h2>
+              <h6 class="card-text ">Описание товара, комплекта покупки, выгода приобретения.</h6>
+              <!--
+                .btn, .btn-primary: Компонент "Кнопка" синего цвета.
+                .mt-auto: Утилита margin-top: auto. Внутри flex-контейнера заставляет элемент занять все доступное
+                          верхнее пространство, эффективно "прижимая" его к низу.
+              -->
+              <a href="#" class="btn btn-outline-primary mt-auto">Купить</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card text-center h-100">   <!-- .h-100: Делает все карточки в одном .row одинаковой высоты. -->
+
+            <div class="card-header bg-grey text-white">
+              <h5 class="card-title mb-0 text-black">Товар №1</h5>
+            </div>
+
+            <!-- Тело карточки -->
+            <div class="card-body d-flex flex-column">
+              <h2 class="card-text fw-bold">$ 100</h2>
+              <h6 class="card-text ">Описание товара, комплекта покупки, выгода приобретения.</h6>
+              <a href="#" class="btn btn-outline-primary mt-auto">Купить</a> <!-- Кнопка -->
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card text-center h-100">   <!-- .h-100: Делает все карточки в одном .row одинаковой высоты. -->
+
+            <div class="card-header bg-grey text-white">
+              <h5 class="card-title mb-0 text-black">Товар №1</h5>
+            </div>
+
+            <!-- Тело карточки -->
+            <div class="card-body d-flex flex-column">
+              <h2 class="card-text fw-bold">$ 100</h2>
+              <h6 class="card-text ">Описание товара, комплекта покупки, выгода приобретения.</h6>
+              <a href="#" class="btn btn-outline-primary mt-auto">Купить</a> <!-- Кнопка -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div> <!-- Конец .row -->
+</div> <!-- Конец .container-fluid -->
+
+<!-- 3. Подключение JS Bootstrap. Необходимо для интерактивных компонентов, таких как выпадающие меню. -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
